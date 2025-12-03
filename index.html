@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ma To-Do List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo-container">
+                <img src="imgs/coverguard-logo.png.webp" alt="Coverguard Logo" class="header-logo">
+            </div>
+            <h1>TO DO LIST CELYO </h1>
+            <p class="subtitle" id="weekInfo">Semaine du...</p>
+            <div class="header-tabs">
+                <button class="tab-btn active" data-tab="current">Tâches actuelles</button>
+                <button class="tab-btn" data-tab="history">Historique</button>
+            </div>
+        </header>
+
+        <div class="add-task-container">
+            <input 
+                type="text" 
+                id="taskInput" 
+                placeholder="Titre de la tâche..." 
+                maxlength="200"
+            >
+            <textarea 
+                id="taskDescription" 
+                placeholder="Description (optionnel)..." 
+                maxlength="500"
+                rows="2"
+            ></textarea>
+            <input 
+                type="text" 
+                id="taskLink" 
+                placeholder="Lien vers fichier ou URL (optionnel)..." 
+                maxlength="500"
+            >
+            <button id="addTaskBtn">Ajouter la tâche</button>
+        </div>
+
+        <div class="stats">
+            <span id="taskCount">0 tâche(s)</span>
+        </div>
+
+        <ul id="taskList" class="task-list">
+            <!-- Les tâches seront ajoutées ici dynamiquement -->
+        </ul>
+
+        <div class="empty-state" id="emptyState">
+            <p>Aucune tâche pour le moment</p>
+            <p class="empty-subtitle">Ajoutez votre première tâche ci-dessus</p>
+        </div>
+
+        <!-- Section Historique -->
+        <div id="historySection" class="history-section hidden">
+            <div class="history-header">
+                <h2>Historique des activités</h2>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">Tout</button>
+                    <button class="filter-btn" data-filter="added">Ajoutées</button>
+                    <button class="filter-btn" data-filter="completed">Complétées</button>
+                    <button class="filter-btn" data-filter="deleted">Supprimées</button>
+                </div>
+            </div>
+            
+            <div id="logsList" class="logs-list">
+                <!-- Les logs seront ajoutés ici dynamiquement -->
+            </div>
+
+            <div class="empty-state" id="emptyLogs">
+                <p>Aucun historique pour le moment</p>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
